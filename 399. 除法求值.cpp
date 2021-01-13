@@ -8,8 +8,8 @@
 class Solution {
 public:
     vector<double> calcEquation(vector<vector<string>> &equations, vector<double> &values, vector<vector<string>> &queries) {
-        int amount_of_numbers = 0;
         unordered_map<string, int> id_of_numbers;
+        int amount_of_numbers = 0;
 
         for (int i = 0; i < equations.size(); ++i) {
             string dividend = equations[i][0];
