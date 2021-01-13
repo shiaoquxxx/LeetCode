@@ -31,7 +31,7 @@ public:
             }
 
             if (i >= k - 1) {
-                maximum_elements.push_back(mq.front().first);
+                maximum_elements.emplace_back(mq.front().first);
             }
         }
 
