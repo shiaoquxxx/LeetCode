@@ -47,7 +47,7 @@ public:
 
         vector<double> query_results;
 
-        for (const auto &query: queries) {
+        for (auto &query: queries) {
             double query_result = -1.0;
             string dividend = query[0];
             string divisor = query[1];
