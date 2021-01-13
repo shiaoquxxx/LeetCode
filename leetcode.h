@@ -49,39 +49,39 @@ struct TreeNode {
     }
 };
 
-class DisjointSet {
+class MergeFindSet {
 private:
-    vector<int> p;
+    vector<int> root;
     vector<int> rank;
 
 public:
-    explicit DisjointSet(size_t n) {
-        p.resize(n, 0);
+    explicit MergeFindSet(size_t n) {
+        root.resize(n, 0);
         rank.resize(n, 1);
 
         for (int i = 0; i < n; ++i) {
-            p[i] = i;
+            root[i] = i;
         }
     }
 
-    int Find(int x) {
-        return p[x] == x ? x : p[x] = Find(p[x]);
+    int find(int x) {
+        return root[x] == x ? x : root[x] = find(root[x]);
     }
 
-    void Union(int x, int y) {
-        int px = Find(x);
-        int py = Find(y);
+    void merge(int x, int y) {
+        int _x = find(x);
+        int _y = find(y);
 
-        if (px == py) {
+        if (_x == _y) {
             return;
         }
 
-        if (rank[px] < rank[py]) {
-            swap(rank[px], rank[py]);
+        if (rank[_x] < rank[_y]) {
+            swap(rank[_x], rank[_y]);
         }
 
-        rank[px] += rank[py];
+        rank[_x] += rank[_y];
 
-        p[py] = px;
+        root[_y] = _x;
     }
 };
