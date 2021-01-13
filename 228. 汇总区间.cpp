@@ -14,30 +14,30 @@ public:
             return ranges;
         }
 
-        int start = 0;
-        int end = 0;
+        int start_of_range = 0;
+        int end_of_range = 0;
 
         for (int i = 1; i < nums.size(); ++i) {
-            if (nums[i] == nums[end] + 1) {
-                ++end;
+            if (nums[i] == nums[end_of_range] + 1) {
+                ++end_of_range;
             }
             else {
-                if (start != end) {
-                    ranges.emplace_back(to_string(nums[start]) + "->" + to_string(nums[end]));
+                if (start_of_range != end_of_range) {
+                    ranges.emplace_back(to_string(nums[start_of_range]) + "->" + to_string(nums[end_of_range]));
                 }
                 else {
-                    ranges.emplace_back(to_string(nums[end]));
+                    ranges.emplace_back(to_string(nums[end_of_range]));
                 }
 
-                start = end = i;
+                start_of_range = end_of_range = i;
             }
         }
 
-        if (start != end) {
-            ranges.emplace_back(to_string(nums[start]) + "->" + to_string(nums[end]));
+        if (start_of_range != end_of_range) {
+            ranges.emplace_back(to_string(nums[start_of_range]) + "->" + to_string(nums[end_of_range]));
         }
         else {
-            ranges.emplace_back(to_string(nums[end]));
+            ranges.emplace_back(to_string(nums[end_of_range]));
         }
 
         return ranges;
