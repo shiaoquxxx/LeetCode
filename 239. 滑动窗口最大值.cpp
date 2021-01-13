@@ -8,8 +8,8 @@
 class Solution {
 public:
     vector<int> maxSlidingWindow(vector<int> &nums, int k) {
-        vector<int> maximum_elements;
         deque<pair<int, int>> mq;
+        vector<int> maximum_elements;
 
         for (int i = 0; i < nums.size(); ++i) {
             if (mq.empty()) {
