@@ -21,20 +21,20 @@ public:
         return amount_of_provinces;
     }
 
-    bool dfs(vector<vector<int>> &g, vector<int> &visited, int city) {
+    bool dfs(vector<vector<int>> &graph, vector<int> &visited, int city) {
         if (visited[city]) {
             return false;
         }
 
         visited[city] = 1;
 
-        for (int i = 0; i < g.size(); ++i) {
-            if (!g[city][i]) {
+        for (int i = 0; i < graph.size(); ++i) {
+            if (!graph[city][i]) {
                 continue;
             }
 
             if (!visited[i]) {
-                dfs(g, visited, i);
+                dfs(graph, visited, i);
             }
         }
 
