@@ -75,28 +75,28 @@ public:
             }
         }
 
-        vector<int> group_result = TopologicalSort(group_g, group_in, items);
+        vector<int> sorted_groups = TopologicalSort(group_g, group_in, items);
 
-        if (group_result.size() == 0) {
+        if (sorted_groups.size() == 0) {
             return vector<int>();
         }
 
         vector<int> result;
 
-        for (auto &current_group: group_result) {
+        for (auto &current_group: sorted_groups) {
             int size = items_of_groups[current_group].size();
 
             if (size == 0) {
                 continue;
             }
 
-            vector<int> item_result = TopologicalSort(item_g, item_in, items_of_groups[current_group]);
+            vector<int> sorted_items = TopologicalSort(item_g, item_in, items_of_groups[current_group]);
 
-            if (item_result.size() == 0) {
+            if (sorted_items.size() == 0) {
                 return vector<int>();
             }
 
-            for (auto &item: item_result) {
+            for (auto &item: sorted_items) {
                 result.emplace_back(item);
             }
         }
