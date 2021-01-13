@@ -17,7 +17,7 @@ public:
         unordered_map<int, vector<char>> characters_of_sets;
 
         for (int i = 0; i < s.size(); ++i) {
-            characters_of_sets[mfs.find(i)].push_back(s[i]);
+            characters_of_sets[mfs.find(i)].emplace_back(s[i]);
         }
 
         for (auto &[_, characters]: characters_of_sets) {
