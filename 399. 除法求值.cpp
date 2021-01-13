@@ -23,7 +23,7 @@ public:
             }
         }
 
-        vector<vector<double>> g(amount_of_numbers, vector<double>(amount_of_numbers, -1.0));
+        vector<vector<double>> graph(amount_of_numbers, vector<double>(amount_of_numbers, -1.0));
 
         for (int i = 0; i < equations.size(); ++i) {
             string dividend = equations[i][0];
@@ -31,15 +31,15 @@ public:
             int id_of_dividend = id_of_numbers[dividend];
             int id_of_divisor = id_of_numbers[divisor];
 
-            g[id_of_dividend][id_of_divisor] = values[i];
-            g[id_of_divisor][id_of_dividend] = 1 / values[i];
+            graph[id_of_dividend][id_of_divisor] = values[i];
+            graph[id_of_divisor][id_of_dividend] = 1 / values[i];
         }
 
         for (int k = 0; k < amount_of_numbers; ++k) {
             for (int i = 0; i < amount_of_numbers; ++i) {
                 for (int j = 0; j < amount_of_numbers; ++j) {
-                    if (g[i][k] > 0 && g[k][j] > 0) {
-                        g[i][j] = g[i][k] * g[k][j];
+                    if (graph[i][k] > 0 && graph[k][j] > 0) {
+                        graph[i][j] = graph[i][k] * graph[k][j];
                     }
                 }
             }
@@ -56,8 +56,8 @@ public:
                 int id_of_dividend = id_of_numbers[dividend];
                 int id_of_divisor = id_of_numbers[divisor];
 
-                if (g[id_of_dividend][id_of_divisor] > 0) {
-                    query_result = g[id_of_dividend][id_of_divisor];
+                if (graph[id_of_dividend][id_of_divisor] > 0) {
+                    query_result = graph[id_of_dividend][id_of_divisor];
                 }
             }
 
