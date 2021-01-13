@@ -8,25 +8,25 @@
 class Solution {
 public:
     bool canPlaceFlowers(vector<int> &flowerbed, int n) {
-        int continuous_available_plots = 0;
+        int amount_of_continuous_available_plots = 0;
         int maximum_amount_of_flowers = 0;
 
         for (int i = 0; i < flowerbed.size(); ++i) {
             if (flowerbed[i] == 0) {
-                ++continuous_available_plots;
+                ++amount_of_continuous_available_plots;
             }
             else {
-                --continuous_available_plots;
+                --amount_of_continuous_available_plots;
 
-                if (continuous_available_plots > 0) {
-                    maximum_amount_of_flowers += (continuous_available_plots + 1) / 2;
+                if (amount_of_continuous_available_plots > 0) {
+                    maximum_amount_of_flowers += (amount_of_continuous_available_plots + 1) / 2;
                 }
 
-                continuous_available_plots = -1;
+                amount_of_continuous_available_plots = -1;
             }
         }
 
-        maximum_amount_of_flowers += (continuous_available_plots + 1) / 2;
+        maximum_amount_of_flowers += (amount_of_continuous_available_plots + 1) / 2;
 
         return maximum_amount_of_flowers >= n;
     }
