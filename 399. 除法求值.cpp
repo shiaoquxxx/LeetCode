@@ -61,7 +61,7 @@ public:
                 }
             }
 
-            query_results.push_back(query_result);
+            query_results.emplace_back(query_result);
         }
 
         return query_results;
