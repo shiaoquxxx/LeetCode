@@ -8,16 +8,16 @@
 class Solution {
 public:
     string smallestStringWithSwaps(string s, vector<vector<int>> &pairs) {
-        MergeFindSet mfs(s.size()); // LEETCODE.H
+        MergeFindSet merge_find_set(s.size()); // LEETCODE.H
 
         for (auto &pair: pairs) {
-            mfs.merge(pair[0], pair[1]);
+            merge_find_set.merge(pair[0], pair[1]);
         }
 
         unordered_map<int, vector<char>> characters_of_sets;
 
         for (int i = 0; i < s.size(); ++i) {
-            characters_of_sets[mfs.find(i)].emplace_back(s[i]);
+            characters_of_sets[merge_find_set.find(i)].emplace_back(s[i]);
         }
 
         for (auto &[_, characters]: characters_of_sets) {
@@ -25,7 +25,7 @@ public:
         }
 
         for (int i = 0; i < s.size(); ++i) {
-            int root = mfs.find(i);
+            int root = merge_find_set.find(i);
 
             s[i] = characters_of_sets[root].back();
             characters_of_sets[root].pop_back();
