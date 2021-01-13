@@ -11,21 +11,21 @@ public:
         s += '#';
 
         vector<vector<int>> large_group_positions;
-        int start = 0;
-        int end = 0;
+        int start_of_group = 0;
+        int end_of_group = 0;
         char previous_character = '#';
 
         for (int i = 0; i < s.size(); ++i) {
             if (s[i] == previous_character) {
-                ++end;
+                ++end_of_group;
             }
             else {
-                if (end - start + 1 >= 3) {
-                    large_group_positions.push_back({start, end});
+                if (end_of_group - start_of_group + 1 >= 3) {
+                    large_group_positions.push_back({start_of_group, end_of_group});
                 }
 
-                start = i;
-                end = i;
+                start_of_group = i;
+                end_of_group = i;
             }
 
             previous_character = s[i];
