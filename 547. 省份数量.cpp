@@ -9,6 +9,7 @@ class Solution {
 public:
     int findCircleNum(vector<vector<int>> &isConnected) {
         vector<int> visited(isConnected.size(), 0);
+
         int amount_of_provinces = 0;
 
         for (int i = 0; i < isConnected.size(); ++i) {
