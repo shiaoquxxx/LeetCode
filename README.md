@@ -2,6 +2,7 @@
 
 ## 2021 年 1 月
 
+- 2021-01-14 [1018. 可被 5 整除的二进制前缀](https://leetcode-cn.com/problems/binary-prefix-divisible-by-5/)
 - 2021-01-13 [684. 冗余连接](https://leetcode-cn.com/problems/redundant-connection/)
 - 2021-01-12 [1203. 项目管理](https://leetcode-cn.com/problems/sort-items-by-groups-respecting-dependencies/)
 - 2021-01-11 [1202. 交换字符串中的元素](https://leetcode-cn.com/problems/smallest-string-with-swaps/)
