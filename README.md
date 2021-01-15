@@ -2,6 +2,7 @@
 
 ## 2021 年 1 月
 
+- 2021-01-15 [947. 移除最多的同行或同列石头](https://leetcode-cn.com/problems/most-stones-removed-with-same-row-or-column/)
 - 2021-01-14 [1018. 可被 5 整除的二进制前缀](https://leetcode-cn.com/problems/binary-prefix-divisible-by-5/)
 - 2021-01-13 [684. 冗余连接](https://leetcode-cn.com/problems/redundant-connection/)
 - 2021-01-12 [1203. 项目管理](https://leetcode-cn.com/problems/sort-items-by-groups-respecting-dependencies/)
