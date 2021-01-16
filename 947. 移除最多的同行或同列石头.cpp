@@ -14,6 +14,6 @@ public:
             merge_find_set.merge(stone[0], stone[1] + 10001);
         }
 
-        return stones.size() - merge_find_set.count();
+        return stones.size() - merge_find_set.get_amount_of_connected_components();
     }
 };
