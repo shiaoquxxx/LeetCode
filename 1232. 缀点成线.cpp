@@ -15,7 +15,7 @@ public:
         Vector v(Point(coordinates[1][0], coordinates[1][1]) - Point(coordinates[0][0], coordinates[0][1])); // LEETCODE.H
 
         for (int i = 2; i < coordinates.size(); ++i) {
-            if (cross(v, Point(coordinates[i][0], coordinates[i][1]) - Point(coordinates[0][0], coordinates[0][1])) != 0) {
+            if (outer_product(v, Point(coordinates[i][0], coordinates[i][1]) - Point(coordinates[0][0], coordinates[0][1])) != 0) {
                 return false;
             }
         }
