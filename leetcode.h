@@ -147,11 +147,7 @@ public:
     }
 
     double norm() {
-        return x * x + y * y;
-    }
-
-    double abs() {
-        return sqrt(norm());
+        return sqrt(x * x + y * y);
     }
 
     bool operator<(const Point &p) const {
@@ -165,10 +161,10 @@ public:
 
 using Vector = Point;
 
-double dot(Vector m, Vector n) {
+double inner_product(Vector m, Vector n) {
     return m.x * n.x + m.y * n.y;
 }
 
-double cross(Vector m, Vector n) {
+double outer_product(Vector m, Vector n) {
     return m.x * n.y - m.y * n.x;
 }
