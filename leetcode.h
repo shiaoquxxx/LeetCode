@@ -49,6 +49,10 @@ struct TreeNode {
     }
 };
 
+// ----- ----- ----- ----- ----- ----- ----- -----
+// Merge-Find Set
+// ----- ----- ----- ----- ----- ----- ----- -----
+
 class MergeFindSet {
 private:
     vector<int> root;
@@ -109,3 +113,62 @@ public:
         return rank[find(x)];
     }
 };
+
+// ----- ----- ----- ----- ----- ----- ----- -----
+// Computational Geometry
+// ----- ----- ----- ----- ----- ----- ----- -----
+
+#define EPS (1e-6)
+#define eq(m, n) (fabs((m) - (n)) < EPS)
+
+class Point {
+public:
+    double x;
+    double y;
+
+    explicit Point(double x = 0.0, double y = 0.0)
+        : x(x), y(y) {
+    }
+
+    Point operator+(Point p) {
+        return Point(x + p.x, y + p.y);
+    }
+
+    Point operator-(Point p) {
+        return Point(x - p.x, y - p.y);
+    }
+
+    Point operator*(double k) {
+        return Point(k * x, k * y);
+    }
+
+    Point operator/(double k) {
+        return Point(x / k, y / k);
+    }
+
+    double norm() {
+        return x * x + y * y;
+    }
+
+    double abs() {
+        return sqrt(norm());
+    }
+
+    bool operator<(const Point &p) const {
+        return !eq(x, p.x) ? x < p.x : y < p.y;
+    }
+
+    bool operator==(const Point &p) const {
+        return eq(x, p.x) && eq(y, p.y);
+    }
+};
+
+using Vector = Point;
+
+double dot(Vector m, Vector n) {
+    return m.x * n.x + m.y * n.y;
+}
+
+double cross(Vector m, Vector n) {
+    return m.x * n.y - m.y * n.x;
+}
