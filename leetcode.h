@@ -161,10 +161,10 @@ public:
 
 using Vector = Point;
 
-double inner_product(Vector m, Vector n) {
+double inner_product(Vector m, Vector n) { // dot product / scalar product
     return m.x * n.x + m.y * n.y;
 }
 
-double outer_product(Vector m, Vector n) {
+double outer_product(Vector m, Vector n) { // cross product / vector product
     return m.x * n.y - m.y * n.x;
 }
