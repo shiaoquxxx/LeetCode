@@ -2,6 +2,7 @@
 
 ## 2021 年 1 月
 
+- 2021-01-18 [721. 账户合并](https://leetcode-cn.com/problems/accounts-merge/)
 - 2021-01-17 [1232. 缀点成线](https://leetcode-cn.com/problems/check-if-it-is-a-straight-line/)
 - 2021-01-16 [803. 打砖块](https://leetcode-cn.com/problems/bricks-falling-when-hit/)
 - 2021-01-15 [947. 移除最多的同行或同列石头](https://leetcode-cn.com/problems/most-stones-removed-with-same-row-or-column/)
