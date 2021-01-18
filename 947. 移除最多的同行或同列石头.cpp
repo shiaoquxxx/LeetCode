@@ -14,6 +14,17 @@ public:
             merge_find_set.merge(stone[0], stone[1] + 10001);
         }
 
-        return stones.size() - merge_find_set.get_amount_of_connected_components();
+        unordered_map<int, int> id_of_connected_components;
+        int amount_of_connected_components = 0;
+
+        for (auto &stone: stones) {
+            int id_of_connected_component = merge_find_set.find(stone[0]);
+
+            if (id_of_connected_components.find(id_of_connected_component) == id_of_connected_components.end()) {
+                id_of_connected_components[id_of_connected_component] = amount_of_connected_components++;
+            }
+        }
+
+        return stones.size() - amount_of_connected_components;
     }
 };
