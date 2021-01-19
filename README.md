@@ -2,6 +2,7 @@
 
 ## 2021 年 1 月
 
+- 2021-01-20 [628. 三个数的最大乘积](https://leetcode-cn.com/problems/maximum-product-of-three-numbers/)
 - 2021-01-19 [1584. 连接所有点的最小费用](https://leetcode-cn.com/problems/min-cost-to-connect-all-points/)
 - 2021-01-18 [721. 账户合并](https://leetcode-cn.com/problems/accounts-merge/)
 - 2021-01-17 [1232. 缀点成线](https://leetcode-cn.com/problems/check-if-it-is-a-straight-line/)
