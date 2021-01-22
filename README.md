@@ -2,6 +2,7 @@
 
 ## 2021 年 1 月
 
+- 2021-01-22 [989. 数组形式的整数加法](https://leetcode-cn.com/problems/add-to-array-form-of-integer/)
 - 2021-01-21 [1489. 找到最小生成树里的关键边和伪关键边](https://leetcode-cn.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/)
 - 2021-01-20 [628. 三个数的最大乘积](https://leetcode-cn.com/problems/maximum-product-of-three-numbers/)
 - 2021-01-19 [1584. 连接所有点的最小费用](https://leetcode-cn.com/problems/min-cost-to-connect-all-points/)
