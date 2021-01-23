@@ -22,6 +22,7 @@ public:
 
     vector<int> addArray(vector<int> &m, vector<int> &n) {
         vector<int> result;
+
         result.reserve(max(m.size(), n.size()) + 1);
 
         auto iterator_of_m = m.rbegin();
