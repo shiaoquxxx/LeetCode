@@ -2,6 +2,7 @@
 
 ## 2021 年 1 月
 
+- 2021-01-24 [674. 最长连续递增序列](https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/)
 - 2021-01-23 [1319. 连通网络的操作次数](https://leetcode-cn.com/problems/number-of-operations-to-make-network-connected/)
 - 2021-01-22 [989. 数组形式的整数加法](https://leetcode-cn.com/problems/add-to-array-form-of-integer/)
 - 2021-01-21 [1489. 找到最小生成树里的关键边和伪关键边](https://leetcode-cn.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/)
