@@ -10,7 +10,7 @@ public:
     int regionsBySlashes(vector<string> &grid) {
         int n = grid.size();
 
-        MergeFindSet merge_find_set(4 * n * n);
+        MergeFindSet merge_find_set(4 * n * n); // LEETCODE.H
 
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < n; ++j) {
