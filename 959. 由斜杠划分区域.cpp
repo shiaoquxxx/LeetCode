@@ -46,7 +46,7 @@ public:
             }
         }
 
-        set<int> id_of_connected_components;
+        unordered_set<int> id_of_connected_components;
 
         for (int i = 0; i < 4 * n * n; ++i) {
             id_of_connected_components.emplace(merge_find_set.find(i));
