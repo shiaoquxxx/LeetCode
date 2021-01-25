@@ -2,6 +2,7 @@
 
 ## 2021 年 1 月
 
+- 2021-01-26 [1128. 等价多米诺骨牌对的数量](https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs/)
 - 2021-01-25 [959. 由斜杠划分区域](https://leetcode-cn.com/problems/regions-cut-by-slashes/)
 - 2021-01-24 [674. 最长连续递增序列](https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/)
 - 2021-01-23 [1319. 连通网络的操作次数](https://leetcode-cn.com/problems/number-of-operations-to-make-network-connected/)
