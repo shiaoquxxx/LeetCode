@@ -2,6 +2,7 @@
 
 ## 2021 年 1 月
 
+- 2021-01-28 [724. 寻找数组的中心索引](https://leetcode-cn.com/problems/find-pivot-index/)
 - 2021-01-27 [1579. 保证图可完全遍历](https://leetcode-cn.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/)
 - 2021-01-26 [1128. 等价多米诺骨牌对的数量](https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs/)
 - 2021-01-25 [959. 由斜杠划分区域](https://leetcode-cn.com/problems/regions-cut-by-slashes/)
