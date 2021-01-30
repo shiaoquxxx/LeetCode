@@ -9,7 +9,6 @@ class Solution {
 public:
     vector<int> findRedundantConnection(vector<vector<int>> &edges) {
         MergeFindSet merge_find_set(edges.size() + 1); // LEETCODE.H
-
         vector<int> redundant_connection;
 
         for (auto &edge: edges) {
