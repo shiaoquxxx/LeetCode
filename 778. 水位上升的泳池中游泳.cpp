@@ -34,12 +34,11 @@ public:
             }
         }
 
-        int N = grid.size();
-        MergeFindSet merge_find_set(N * N); // LEETCODE.H
-
+        int n = grid.size();
+        MergeFindSet merge_find_set(n * n); // LEETCODE.H
         int answer = 0;
 
-        while (!priority_queue.empty() && merge_find_set.find(0 * N + 0) != merge_find_set.find((N - 1) * N + (N - 1))) {
+        while (!priority_queue.empty() && merge_find_set.find(0 * n + 0) != merge_find_set.find((n - 1) * n + (n - 1))) {
             Cell c = priority_queue.top();
 
             answer = c.height;
@@ -52,11 +51,11 @@ public:
                 merge_find_set.merge(flatten(c.x, c.y, grid), flatten(c.x, c.y - 1, grid));
             }
 
-            if (c.x + 1 < N && grid[c.x + 1][c.y] <= c.height) {
+            if (c.x + 1 < n && grid[c.x + 1][c.y] <= c.height) {
                 merge_find_set.merge(flatten(c.x, c.y, grid), flatten(c.x + 1, c.y, grid));
             }
 
-            if (c.y + 1 < N && grid[c.x][c.y + 1] <= c.height) {
+            if (c.y + 1 < n && grid[c.x][c.y + 1] <= c.height) {
                 merge_find_set.merge(flatten(c.x, c.y, grid), flatten(c.x, c.y + 1, grid));
             }
 
