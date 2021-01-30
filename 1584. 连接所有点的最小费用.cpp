@@ -8,13 +8,13 @@
 class Solution {
 public:
     struct Edge {
-        int src;
-        int dst;
+        int source;
+        int destination;
         int distance;
 
-        explicit Edge(int src, int dst, vector<vector<int>> &points)
-            : src(src), dst(dst) {
-            distance = abs(points[src][0] - points[dst][0]) + abs(points[src][1] - points[dst][1]);
+        explicit Edge(int source, int destination, vector<vector<int>> &points)
+            : source(source), destination(destination) {
+            distance = abs(points[source][0] - points[destination][0]) + abs(points[source][1] - points[destination][1]);
         }
 
         bool operator<(const Edge &e) const {
@@ -40,11 +40,11 @@ public:
 
             priority_queue.pop();
 
-            if (merge_find_set.find(edge.src) == merge_find_set.find(edge.dst)) {
+            if (merge_find_set.find(edge.source) == merge_find_set.find(edge.destination)) {
                 continue;
             }
 
-            merge_find_set.merge(edge.src, edge.dst);
+            merge_find_set.merge(edge.source, edge.destination);
             minimum_cost += edge.distance;
         }
 
