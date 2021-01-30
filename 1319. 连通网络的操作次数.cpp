@@ -18,12 +18,6 @@ public:
             merge_find_set.merge(connection[0], connection[1]);
         }
 
-        unordered_set<int> id_of_connected_components;
-
-        for (int i = 0; i < n; ++i) {
-            id_of_connected_components.emplace(merge_find_set.find(i));
-        }
-
-        return id_of_connected_components.size() - 1;
+        return merge_find_set.get_amount_of_disjoint_roots() - 1;
     }
 };
