@@ -9,7 +9,6 @@ class Solution {
 public:
     int regionsBySlashes(vector<string> &grid) {
         int n = grid.size();
-
         MergeFindSet merge_find_set(4 * n * n); // LEETCODE.H
 
         for (int i = 0; i < n; ++i) {
@@ -46,12 +45,6 @@ public:
             }
         }
 
-        unordered_set<int> id_of_connected_components;
-
-        for (int i = 0; i < 4 * n * n; ++i) {
-            id_of_connected_components.emplace(merge_find_set.find(i));
-        }
-
-        return id_of_connected_components.size();
+        return merge_find_set.get_amount_of_disjoint_roots();
     }
 };
