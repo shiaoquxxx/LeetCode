@@ -8,8 +8,8 @@
 class Solution {
 public:
     Solution() {
-        fibonacci_sequence[0] = 0LL;
-        fibonacci_sequence[1] = 1LL;
+        fibonacci_sequence[0] = 0;
+        fibonacci_sequence[1] = 1;
 
         for (int i = 2; i < fibonacci_sequence.size(); ++i) {
             fibonacci_sequence[i] = fibonacci_sequence[i - 1] + fibonacci_sequence[i - 2];
@@ -17,9 +17,9 @@ public:
     }
 
     int fib(int n) {
-        return static_cast<int>(fibonacci_sequence[n]);
+        return fibonacci_sequence[n];
     }
 
 private:
-    array<long long, 50> fibonacci_sequence;
+    array<int, 31> fibonacci_sequence;
 };
