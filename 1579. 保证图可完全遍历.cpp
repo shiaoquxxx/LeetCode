@@ -44,11 +44,11 @@ public:
             }
         }
 
-        if (merge_find_set_for_alice.get_amount_of_disjoint_roots() != 1) {
+        if (merge_find_set_for_alice.get_amount_of_different_roots() != 1) {
             return -1;
         }
 
-        if (merge_find_set_for_bob.get_amount_of_disjoint_roots() != 1) {
+        if (merge_find_set_for_bob.get_amount_of_different_roots() != 1) {
             return -1;
         }
 
