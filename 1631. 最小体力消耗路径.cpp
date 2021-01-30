@@ -58,6 +58,7 @@ public:
             Edge e = priority_queue.top();
 
             priority_queue.pop();
+
             merge_find_set.merge(e.source, e.destination);
             answer = e.distance;
         }
