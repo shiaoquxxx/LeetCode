@@ -41,7 +41,7 @@ public:
         while (!priority_queue.empty() && merge_find_set.find(0 * n + 0) != merge_find_set.find((n - 1) * n + (n - 1))) {
             Cell c = priority_queue.top();
 
-            answer = c.height;
+            priority_queue.pop();
 
             if (c.x - 1 >= 0 && grid[c.x - 1][c.y] <= c.height) {
                 merge_find_set.merge(flatten(c.x, c.y, grid), flatten(c.x - 1, c.y, grid));
@@ -59,8 +59,7 @@ public:
                 merge_find_set.merge(flatten(c.x, c.y, grid), flatten(c.x, c.y + 1, grid));
             }
 
-            priority_queue.pop();
-
+            answer = c.height;
         }
 
         return answer;
