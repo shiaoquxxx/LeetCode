@@ -18,6 +18,7 @@ public:
             if (id_of_numbers.find(dividend) == id_of_numbers.end()) {
                 id_of_numbers[dividend] = amount_of_numbers++;
             }
+
             if (id_of_numbers.find(divisor) == id_of_numbers.end()) {
                 id_of_numbers[divisor] = amount_of_numbers++;
             }
