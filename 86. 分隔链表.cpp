@@ -8,11 +8,11 @@
 class Solution {
 public:
     ListNode *partition(ListNode *head, int x) {
-        ListNode *dummy_head_of_smaller_elements = new ListNode(0);
-        ListNode *dummy_head_of_bigger_elements = new ListNode(0);
+        ListNode *dummy_head_for_smaller_elements = new ListNode(0);
+        ListNode *dummy_head_for_bigger_elements = new ListNode(0);
 
-        ListNode *smaller_elements = dummy_head_of_smaller_elements;
-        ListNode *bigger_elements = dummy_head_of_bigger_elements;
+        ListNode *smaller_elements = dummy_head_for_smaller_elements;
+        ListNode *bigger_elements = dummy_head_for_bigger_elements;
 
         while (head) {
             if (head->val < x) {
@@ -27,9 +27,9 @@ public:
             head = head->next;
         }
 
-        smaller_elements->next = dummy_head_of_bigger_elements->next;
+        smaller_elements->next = dummy_head_for_bigger_elements->next;
         bigger_elements->next = nullptr;
 
-        return dummy_head_of_smaller_elements->next;
+        return dummy_head_for_smaller_elements->next;
     }
 };
