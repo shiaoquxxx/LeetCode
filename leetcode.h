@@ -93,7 +93,7 @@ public:
         return rank[find(x)];
     }
 
-    size_t get_amount_of_different_roots(void) {
+    size_t get_amount_of_different_roots(void) { // a.k.a connected components
         unordered_set<int> roots;
 
         for (auto i = root.begin(); i != root.end(); ++i) {
