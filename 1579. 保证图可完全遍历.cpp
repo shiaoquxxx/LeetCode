@@ -14,7 +14,6 @@ public:
 
         MergeFindSet merge_find_set_for_alice(n); // LEETCODE.H
         MergeFindSet merge_find_set_for_bob(n); // LEETCODE.H
-
         int amount_of_edges_to_remove = 0;
 
         for (auto &edge: edges) {
