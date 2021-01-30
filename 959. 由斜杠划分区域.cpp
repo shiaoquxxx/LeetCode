@@ -45,6 +45,6 @@ public:
             }
         }
 
-        return merge_find_set.get_amount_of_disjoint_roots();
+        return merge_find_set.get_amount_of_different_roots();
     }
 };
