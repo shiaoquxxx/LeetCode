@@ -108,7 +108,7 @@ public:
         printf("merge-find set size: %lu\n", root.size());
         printf("merge-find set disjoint roots: %lu\n", get_amount_of_disjoint_roots());
         for (int i = 0; i < root.size(); ++i) {
-            printf("node: %d\troot:%d\tfind:%d\trank:%d\t\n", i, root[i], find(i), rank[i]);
+            printf("node: %d\troot:%d\trank:%d\t\n", i, find(i), rank[i]);
         }
         printf("----- ----- ----- -----\n");
 
