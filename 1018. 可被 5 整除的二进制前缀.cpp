@@ -9,7 +9,6 @@ class Solution {
 public:
     vector<bool> prefixesDivBy5(vector<int> &A) {
         int last_digit = 0;
-
         vector<bool> answer;
 
         for (auto &digit: A) {
