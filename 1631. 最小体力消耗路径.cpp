@@ -9,20 +9,19 @@
 class Solution {
 public:
     struct Edge {
-        int src;
-        int dst;
+        int source;
+        int destination;
         int distance;
 
-        explicit Edge(int src, int dst, vector<vector<int>> &heights)
-            : src(src), dst(dst) {
+        explicit Edge(int source, int destination, vector<vector<int>> &heights)
+            : source(source), destination(destination) {
             int n = heights[0].size();
+            int source_x = source / n;
+            int source_y = source % n;
+            int destination_x = destination / n;
+            int destination_y = destination % n;
 
-            int srcx = src / n;
-            int srcy = src % n;
-            int dstx = dst / n;
-            int dsty = dst % n;
-
-            distance = abs(heights[dstx][dsty] - heights[srcx][srcy]);
+            distance = abs(heights[destination_x][destination_y] - heights[source_x][source_y]);
         }
 
         bool operator<(const Edge &e) const {
@@ -32,7 +31,6 @@ public:
 
     int minimumEffortPath(vector<vector<int>> &heights) {
         int n = heights[0].size();
-
         priority_queue<Edge> priority_queue;
 
         for (int i = 0; i < heights.size(); ++i) {
@@ -54,14 +52,13 @@ public:
         }
 
         MergeFindSet merge_find_set(heights.size() * n); // LEETCODE.H
-
         int answer = 0;
 
         while (!priority_queue.empty() && merge_find_set.find(0) != merge_find_set.find((heights.size() - 1) * n + (n - 1))) {
             Edge e = priority_queue.top();
 
             priority_queue.pop();
-            merge_find_set.merge(e.src, e.dst);
+            merge_find_set.merge(e.source, e.destination);
             answer = e.distance;
         }
 
