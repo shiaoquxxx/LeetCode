@@ -93,7 +93,7 @@ public:
         return rank[find(x)];
     }
 
-    size_t get_amount_of_disjoint_roots(void) {
+    size_t get_amount_of_different_roots(void) {
         unordered_set<int> roots;
 
         for (auto i = root.begin(); i != root.end(); ++i) {
@@ -106,7 +106,7 @@ public:
     void show_debug_information(void) {
         printf("----- ----- ----- -----\n");
         printf("merge-find set size: %lu\n", root.size());
-        printf("merge-find set disjoint roots: %lu\n", get_amount_of_disjoint_roots());
+        printf("merge-find set different roots: %lu\n", get_amount_of_different_roots());
         for (int i = 0; i < root.size(); ++i) {
             printf("node: %d\troot:%d\trank:%d\t\n", i, find(i), rank[i]);
         }
