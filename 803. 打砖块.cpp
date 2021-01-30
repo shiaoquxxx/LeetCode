@@ -7,7 +7,7 @@
 
 class Solution {
 public:
-    int get_flatten_coordinate(int x, int y) {
+    int flatten(int x, int y) {
         return 205 * x + y + 1;
     }
 
@@ -29,7 +29,7 @@ public:
 
         for (int i = 0; i < grid[0].size(); ++i) {
             if (grid[0][i] > 0) {
-                merge_find_set.merge(0, get_flatten_coordinate(0, i));
+                merge_find_set.merge(0, flatten(0, i));
             }
         }
 
@@ -40,16 +40,17 @@ public:
                 }
 
                 if (i + 1 < grid.size() && grid[i + 1][j] > 0) {
-                    merge_find_set.merge(get_flatten_coordinate(i, j), get_flatten_coordinate(i + 1, j));
+                    merge_find_set.merge(flatten(i, j), flatten(i + 1, j));
                 }
 
                 if (j + 1 < grid[0].size() && grid[i][j + 1] > 0) {
-                    merge_find_set.merge(get_flatten_coordinate(i, j), get_flatten_coordinate(i, j + 1));
+                    merge_find_set.merge(flatten(i, j), flatten(i, j + 1));
                 }
             }
         }
 
         vector<int> ranks;
+
         ranks.emplace_back(merge_find_set.get_rank(0) - 1);
 
         reverse(hits.begin(), hits.end());
@@ -62,23 +63,23 @@ public:
                 grid[x][y] = 1;
 
                 if (!x) {
-                    merge_find_set.merge(0, get_flatten_coordinate(x, y));
+                    merge_find_set.merge(0, flatten(x, y));
                 }
 
                 if (x - 1 >= 0 && grid[x - 1][y] > 0) {
-                    merge_find_set.merge(get_flatten_coordinate(x, y), get_flatten_coordinate(x - 1, y));
+                    merge_find_set.merge(flatten(x, y), flatten(x - 1, y));
                 }
 
                 if (x + 1 < grid.size() && grid[x + 1][y] > 0) {
-                    merge_find_set.merge(get_flatten_coordinate(x, y), get_flatten_coordinate(x + 1, y));
+                    merge_find_set.merge(flatten(x, y), flatten(x + 1, y));
                 }
 
                 if (y - 1 >= 0 && grid[x][y - 1] > 0) {
-                    merge_find_set.merge(get_flatten_coordinate(x, y), get_flatten_coordinate(x, y - 1));
+                    merge_find_set.merge(flatten(x, y), flatten(x, y - 1));
                 }
 
                 if (y + 1 < grid[0].size() && grid[x][y + 1] > 0) {
-                    merge_find_set.merge(get_flatten_coordinate(x, y), get_flatten_coordinate(x, y + 1));
+                    merge_find_set.merge(flatten(x, y), flatten(x, y + 1));
                 }
             }
 
