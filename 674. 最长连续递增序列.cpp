@@ -15,7 +15,6 @@ public:
         int current_length_of_subsequence = 1;
         int maximum_length_of_subsequence = 1;
 
-
         for (int i = 1; i < nums.size(); ++i) {
             if (nums[i] > nums[i - 1]) {
                 ++current_length_of_subsequence;
@@ -23,6 +22,7 @@ public:
             else {
                 current_length_of_subsequence = 1;
             }
+
             maximum_length_of_subsequence = max(maximum_length_of_subsequence, current_length_of_subsequence);
         }
 
