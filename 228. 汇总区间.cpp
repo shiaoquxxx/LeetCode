@@ -14,30 +14,30 @@ public:
             return ranges;
         }
 
-        int start_of_range = 0;
-        int end_of_range = 0;
+        int starting_position_of_range = 0;
+        int ending_position_of_range = 0;
 
         for (int i = 1; i < nums.size(); ++i) {
-            if (nums[i] == nums[end_of_range] + 1) {
-                ++end_of_range;
+            if (nums[i] == nums[ending_position_of_range] + 1) {
+                ++ending_position_of_range;
             }
             else {
-                if (start_of_range != end_of_range) {
-                    ranges.emplace_back(to_string(nums[start_of_range]) + "->" + to_string(nums[end_of_range]));
+                if (starting_position_of_range != ending_position_of_range) {
+                    ranges.emplace_back(to_string(nums[starting_position_of_range]) + "->" + to_string(nums[ending_position_of_range]));
                 }
                 else {
-                    ranges.emplace_back(to_string(nums[end_of_range]));
+                    ranges.emplace_back(to_string(nums[ending_position_of_range]));
                 }
 
-                start_of_range = end_of_range = i;
+                starting_position_of_range = ending_position_of_range = i;
             }
         }
 
-        if (start_of_range != end_of_range) {
-            ranges.emplace_back(to_string(nums[start_of_range]) + "->" + to_string(nums[end_of_range]));
+        if (starting_position_of_range != ending_position_of_range) {
+            ranges.emplace_back(to_string(nums[starting_position_of_range]) + "->" + to_string(nums[ending_position_of_range]));
         }
         else {
-            ranges.emplace_back(to_string(nums[end_of_range]));
+            ranges.emplace_back(to_string(nums[ending_position_of_range]));
         }
 
         return ranges;
