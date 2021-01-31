@@ -2,6 +2,7 @@
 
 ## 2021 年 1 月
 
+- 2021-01-31 [839. 相似字符串组](https://leetcode-cn.com/problems/similar-string-groups/) <span style="color:red">HARD</span>
 - 2021-01-30 [778. 水位上升的泳池中游泳](https://leetcode-cn.com/problems/swim-in-rising-water/) <span style="color:red">HARD</span>
 - 2021-01-29 [1631. 最小体力消耗路径](https://leetcode-cn.com/problems/path-with-minimum-effort/) <span style="color:orange">MEDIUM</span>
 - 2021-01-28 [724. 寻找数组的中心索引](https://leetcode-cn.com/problems/find-pivot-index/) <span style="color:green">EASY</span>
