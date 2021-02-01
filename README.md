@@ -1,5 +1,9 @@
 # LeetCode 每日一题
 
+## 2021 年 2 月
+
+- 2021-02-01 [888. 公平的糖果棒交换](https://leetcode-cn.com/problems/fair-candy-swap/) <span style="color:green">EASY</span>
+
 ## 2021 年 1 月
 
 ![2021-01](https://assets.leetcode-cn.com/medals/2021/lg/2021-01.png)
