@@ -9,15 +9,15 @@ class Solution {
 public:
     int findCircleNum(vector<vector<int>> &isConnected) {
         vector<int> visited(isConnected.size(), 0);
-        int amount_of_provinces = 0;
+        int number_of_provinces = 0;
 
         for (int i = 0; i < isConnected.size(); ++i) {
             if (dfs(isConnected, visited, i)) {
-                ++amount_of_provinces;
+                ++number_of_provinces;
             }
         }
 
-        return amount_of_provinces;
+        return number_of_provinces;
     }
 
     bool dfs(vector<vector<int>> &graph, vector<int> &visited, int city) {
