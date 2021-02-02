@@ -8,20 +8,20 @@
 class Solution {
 public:
     int characterReplacement(string s, int k) {
-        array<int, 26> amount_of_characters;
+        array<int, 26> number_of_characters;
 
-        amount_of_characters.fill(0);
+        number_of_characters.fill(0);
 
         int left = 0;
         int right = 0;
-        int amount_of_most_character = 0;
+        int number_of_most_frequently_used_character = 0;
 
         while (right < s.size()) {
-            ++amount_of_characters[s[right] - 'A'];
-            amount_of_most_character = max(amount_of_most_character, amount_of_characters[s[right] - 'A']);
+            ++number_of_characters[s[right] - 'A'];
+            number_of_most_frequently_used_character = max(number_of_most_frequently_used_character, number_of_characters[s[right] - 'A']);
 
-            if (right - left + 1 - amount_of_most_character > k) {
-                --amount_of_characters[s[left++] - 'A'];
+            if (right - left + 1 - number_of_most_frequently_used_character > k) {
+                --number_of_characters[s[left++] - 'A'];
             }
 
             ++right;
