@@ -10,7 +10,7 @@ public:
     vector<vector<string>> accountsMerge(vector<vector<string>> &accounts) {
         unordered_map<string, string> account_name_of_emails;
         map<string, int> id_of_emails;
-        int amount_of_emails = 0;
+        int number_of_emails = 0;
 
         for (auto &account: accounts) {
             string account_name = account[0];
@@ -18,12 +18,12 @@ public:
             for (int i = 1; i < account.size(); ++i) {
                 if (id_of_emails.find(account[i]) == id_of_emails.end()) {
                     account_name_of_emails[account[i]] = account_name;
-                    id_of_emails[account[i]] = amount_of_emails++;
+                    id_of_emails[account[i]] = number_of_emails++;
                 }
             }
         }
 
-        MergeFindSet merge_find_set(amount_of_emails); // LEETCODE.H
+        MergeFindSet merge_find_set(number_of_emails); // LEETCODE.H
 
         for (auto &account: accounts) {
             if (account.size() <= 1) {
@@ -38,17 +38,17 @@ public:
         }
 
         unordered_map<int, int> id_of_users;
-        int amount_of_users = 0;
+        int number_of_users = 0;
 
         for (auto &[_, id_of_email]: id_of_emails) {
             int user = merge_find_set.find(id_of_email);
 
             if (id_of_users.find(user) == id_of_users.end()) {
-                id_of_users[user] = amount_of_users++;
+                id_of_users[user] = number_of_users++;
             }
         }
 
-        vector<vector<string>> answer(amount_of_users, vector<string>());
+        vector<vector<string>> answer(number_of_users, vector<string>());
 
         for (auto &[email, id_of_email]: id_of_emails) {
             int user = merge_find_set.find(id_of_email);
