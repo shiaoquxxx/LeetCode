@@ -2,6 +2,7 @@
 
 ## 2021 年 2 月
 
+- 2021-02-02 [424. 替换后的最长重复字符](https://leetcode-cn.com/problems/longest-repeating-character-replacement/) <span style="color:orange">MEDIUM</span>
 - 2021-02-01 [888. 公平的糖果棒交换](https://leetcode-cn.com/problems/fair-candy-swap/) <span style="color:green">EASY</span>
 
 ## 2021 年 1 月
