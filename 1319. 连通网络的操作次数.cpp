@@ -18,6 +18,6 @@ public:
             merge_find_set.merge(connection[0], connection[1]);
         }
 
-        return merge_find_set.get_amount_of_different_roots() - 1;
+        return merge_find_set.get_number_of_different_roots() - 1;
     }
 };
