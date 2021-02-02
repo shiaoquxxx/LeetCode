@@ -14,12 +14,12 @@ public:
 
         MergeFindSet merge_find_set_for_alice(n); // LEETCODE.H
         MergeFindSet merge_find_set_for_bob(n); // LEETCODE.H
-        int amount_of_edges_to_remove = 0;
+        int number_of_edges_to_remove = 0;
 
         for (auto &edge: edges) {
             if (edge[0] == 1) {
                 if (merge_find_set_for_alice.find(edge[1] - 1) == merge_find_set_for_alice.find(edge[2] - 1)) {
-                    ++amount_of_edges_to_remove;
+                    ++number_of_edges_to_remove;
                 }
                 else {
                     merge_find_set_for_alice.merge(edge[1] - 1, edge[2] - 1);
@@ -27,7 +27,7 @@ public:
             }
             else if (edge[0] == 2) {
                 if (merge_find_set_for_bob.find(edge[1] - 1) == merge_find_set_for_bob.find(edge[2] - 1)) {
-                    ++amount_of_edges_to_remove;
+                    ++number_of_edges_to_remove;
                 }
                 else {
                     merge_find_set_for_bob.merge(edge[1] - 1, edge[2] - 1);
@@ -35,7 +35,7 @@ public:
             }
             else if (edge[0] == 3) {
                 if (merge_find_set_for_alice.find(edge[1] - 1) == merge_find_set_for_alice.find(edge[2] - 1) && merge_find_set_for_bob.find(edge[1] - 1) == merge_find_set_for_bob.find(edge[2] - 1)) {
-                    ++amount_of_edges_to_remove;
+                    ++number_of_edges_to_remove;
                 }
                 else {
                     merge_find_set_for_alice.merge(edge[1] - 1, edge[2] - 1);
@@ -44,14 +44,14 @@ public:
             }
         }
 
-        if (merge_find_set_for_alice.get_amount_of_different_roots() != 1) {
+        if (merge_find_set_for_alice.get_number_of_different_roots() != 1) {
             return -1;
         }
 
-        if (merge_find_set_for_bob.get_amount_of_different_roots() != 1) {
+        if (merge_find_set_for_bob.get_number_of_different_roots() != 1) {
             return -1;
         }
 
-        return amount_of_edges_to_remove;
+        return number_of_edges_to_remove;
     }
 };
