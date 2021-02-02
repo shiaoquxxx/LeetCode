@@ -8,9 +8,9 @@
 class Solution {
 public:
     vector<vector<int>> findCriticalAndPseudoCriticalEdges(int n, vector<vector<int>> &edges) {
-        int amount_of_edges = edges.size();
+        int number_of_edges = edges.size();
 
-        for (int i = 0; i < amount_of_edges; ++i) {
+        for (int i = 0; i < number_of_edges; ++i) {
             edges[i].emplace_back(i);
         }
 
@@ -21,7 +21,7 @@ public:
         MergeFindSet merge_find_set_for_mst(n);
         int weight_of_mst = 0;
 
-        for (int i = 0; i < amount_of_edges; ++i) {
+        for (int i = 0; i < number_of_edges; ++i) {
             if (merge_find_set_for_mst.find(edges[i][0]) != merge_find_set_for_mst.find(edges[i][1])) {
                 merge_find_set_for_mst.merge(edges[i][0], edges[i][1]);
                 weight_of_mst += edges[i][2];
@@ -31,11 +31,11 @@ public:
         vector<vector<int>> answer(2);
         int weight_of_current_tree = 0;
 
-        for (int i = 0; i < amount_of_edges; ++i) {
+        for (int i = 0; i < number_of_edges; ++i) {
             MergeFindSet merge_find_set_for_critical_edges(n);
             weight_of_current_tree = 0;
 
-            for (int j = 0; j < amount_of_edges; ++j) {
+            for (int j = 0; j < number_of_edges; ++j) {
                 if (i != j && merge_find_set_for_critical_edges.find(edges[j][0]) != merge_find_set_for_critical_edges.find(edges[j][1])) {
                     merge_find_set_for_critical_edges.merge(edges[j][0], edges[j][1]);
                     weight_of_current_tree += edges[j][2];
@@ -53,7 +53,7 @@ public:
             merge_find_set_for_pseudo_critical_edges.merge(edges[i][0], edges[i][1]);
             weight_of_current_tree = edges[i][2];
 
-            for (int j = 0; j < amount_of_edges; ++j) {
+            for (int j = 0; j < number_of_edges; ++j) {
                 if (i != j && merge_find_set_for_pseudo_critical_edges.find(edges[j][0]) != merge_find_set_for_pseudo_critical_edges.find(edges[j][1])) {
                     merge_find_set_for_pseudo_critical_edges.merge(edges[j][0], edges[j][1]);
                     weight_of_current_tree += edges[j][2];
