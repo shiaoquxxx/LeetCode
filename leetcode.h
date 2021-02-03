@@ -55,13 +55,15 @@ struct TreeNode {
 
 class DualHeap {
 private:
-    priority_queue<int, vector<int>, less<>> smaller_part;
-    priority_queue<int, vector<int>, greater<>> bigger_part;
-    unordered_map<int, int> delayed;
-
     int n;
+
+    priority_queue<int, vector<int>, less<>> smaller_part;
     int size_of_smaller_part;
+
+    priority_queue<int, vector<int>, greater<>> bigger_part;
     int size_of_bigger_part;
+
+    unordered_map<int, int> delayed;
 
     template<typename T>
     void prune(T &heap) {
