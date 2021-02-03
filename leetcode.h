@@ -50,6 +50,105 @@ struct TreeNode {
 };
 
 // ----- ----- ----- ----- ----- ----- ----- -----
+// Dual Heap
+// ----- ----- ----- ----- ----- ----- ----- -----
+
+class DualHeap {
+private:
+    priority_queue<int, vector<int>, less<>> smaller_part;
+    priority_queue<int, vector<int>, greater<>> bigger_part;
+    unordered_map<int, int> delayed;
+
+    int n;
+    int size_of_smaller_part;
+    int size_of_bigger_part;
+
+    template<typename T>
+    void prune(T &heap) {
+        while (!heap.empty()) {
+            int top = heap.top();
+
+            if (delayed.count(top)) {
+                --delayed[top];
+
+                if (!delayed[top]) {
+                    delayed.erase(top);
+                }
+
+                heap.pop();
+            }
+            else {
+                break;
+            }
+        }
+    }
+
+    void balance() {
+        if (size_of_smaller_part > size_of_bigger_part + 1) {
+            bigger_part.push(smaller_part.top());
+            ++size_of_bigger_part;
+
+            smaller_part.pop();
+            --size_of_smaller_part;
+
+            prune(smaller_part);
+        }
+        else if (size_of_smaller_part < size_of_bigger_part) {
+            smaller_part.push(bigger_part.top());
+            ++size_of_smaller_part;
+
+            bigger_part.pop();
+            --size_of_bigger_part;
+
+            prune(bigger_part);
+        }
+    }
+
+public:
+    explicit DualHeap(int n)
+        : n(n), size_of_smaller_part(0), size_of_bigger_part(0) {
+    }
+
+    void insert(int number) {
+        if (smaller_part.empty() || number <= smaller_part.top()) {
+            smaller_part.push(number);
+            ++size_of_smaller_part;
+        }
+        else {
+            bigger_part.push(number);
+            ++size_of_bigger_part;
+        }
+
+        balance();
+    }
+
+    void erase(int number) {
+        ++delayed[number];
+
+        if (number <= smaller_part.top()) {
+            --size_of_smaller_part;
+
+            if (number == smaller_part.top()) {
+                prune(smaller_part);
+            }
+        }
+        else {
+            --size_of_bigger_part;
+
+            if (number == bigger_part.top()) {
+                prune(bigger_part);
+            }
+        }
+
+        balance();
+    }
+
+    double get_median(void) {
+        return n & 1 ? smaller_part.top() : smaller_part.top() / 2.0 + bigger_part.top() / 2.0;
+    }
+};
+
+// ----- ----- ----- ----- ----- ----- ----- -----
 // Merge-Find Set
 // ----- ----- ----- ----- ----- ----- ----- -----
 
@@ -101,17 +200,6 @@ public:
         }
 
         return roots.size();
-    }
-
-    void show_debug_information(void) {
-        printf("----- ----- ----- -----\n");
-        printf("merge-find set size: %lu\n", root.size());
-        printf("merge-find set different roots: %lu\n", get_number_of_different_roots());
-        for (int i = 0; i < root.size(); ++i) {
-            printf("node: %d\troot:%d\trank:%d\t\n", i, find(i), rank[i]);
-        }
-        printf("----- ----- ----- -----\n");
-
     }
 };
 
