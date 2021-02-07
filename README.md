@@ -2,6 +2,7 @@
 
 ## 2021 年 2 月
 
+- 2021-02-07 [665. 非递减数列](https://leetcode-cn.com/problems/non-decreasing-array/) <span style="color:green">EASY</span>
 - 2021-02-06 [1423. 可获得的最大点数](https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards/) <span style="color:orange">MEDIUM</span>
 - 2021-02-05 [1208. 尽可能使字符串相等](https://leetcode-cn.com/problems/get-equal-substrings-within-budget/) <span style="color:orange">MEDIUM</span>
 - 2021-02-04 [643. 子数组最大平均数 I](https://leetcode-cn.com/problems/maximum-average-subarray-i/) <span style="color:green">EASY</span>
