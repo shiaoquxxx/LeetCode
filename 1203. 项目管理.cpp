@@ -12,7 +12,7 @@ public:
 
         for (const auto &item: items) {
             if (indegree[item] == 0) {
-                queue.push(item);
+                queue.emplace(item);
             }
         }
 
@@ -26,7 +26,7 @@ public:
 
             for (const auto &vertex: graph[front]) {
                 if (--indegree[vertex] == 0) {
-                    queue.push(vertex);
+                    queue.emplace(vertex);
                 }
             }
         }
