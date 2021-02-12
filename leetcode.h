@@ -145,7 +145,7 @@ public:
         balance();
     }
 
-    double get_median(void) {
+    double get_median() {
         return n & 1 ? smaller_part.top() : smaller_part.top() / 2.0 + bigger_part.top() / 2.0;
     }
 };
@@ -194,7 +194,7 @@ public:
         return rank[find(x)];
     }
 
-    size_t get_number_of_different_roots(void) { // a.k.a connected components
+    size_t get_number_of_different_roots() { // a.k.a connected components
         unordered_set<int> roots;
 
         for (auto i = root.begin(); i != root.end(); ++i) {
