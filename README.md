@@ -2,9 +2,10 @@
 
 ## 2021 年 2 月
 
+- 2021-02-13 [448. 找到所有数组中消失的数字](https://leetcode-cn.com/problems/find-all-numbers-disappeared-in-an-array/) <span style="color:green">EASY</span>
 - 2021-02-12 [119. 杨辉三角 II](https://leetcode-cn.com/problems/pascals-triangle-ii/) <span style="color:green">EASY</span>
 - 2021-02-11 [703. 数据流中的第 K 大元素](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/) <span style="color:green">EASY</span>
-- 2021-02-10 [567. 字符串的排列](https://leetcode-cn.com/problems/permutation-in-string/)
+- 2021-02-10 [567. 字符串的排列](https://leetcode-cn.com/problems/permutation-in-string/) <span style="color:orange">MEDIUM</span>
 - 2021-02-09 [992. K 个不同整数的子数组](https://leetcode-cn.com/problems/subarrays-with-k-different-integers/) <span style="color:red">HARD</span>
 - 2021-02-08 [978. 最长湍流子数组](https://leetcode-cn.com/problems/longest-turbulent-subarray/) <span style="color:orange">MEDIUM</span>
 - 2021-02-07 [665. 非递减数列](https://leetcode-cn.com/problems/non-decreasing-array/) <span style="color:green">EASY</span>
