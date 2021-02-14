@@ -160,6 +160,8 @@ private:
     vector<int> rank;
 
 public:
+    unordered_map<int, int> roots;
+
     explicit MergeFindSet(size_t n) {
         root.resize(n, 0);
         rank.resize(n, 1);
@@ -195,10 +197,10 @@ public:
     }
 
     size_t get_number_of_different_roots() { // a.k.a connected components
-        unordered_set<int> roots;
+        roots.clear();
 
         for (auto i = root.begin(); i != root.end(); ++i) {
-            roots.emplace(find(*i));
+            roots[find(*i)]++;
         }
 
         return roots.size();
