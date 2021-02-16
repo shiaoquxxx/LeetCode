@@ -7,17 +7,17 @@
 
 class Solution {
 public:
-    int consecutive_ones = 0;
+    int number_of_consecutive_ones = 0;
     int answer = 0;
 
     int findMaxConsecutiveOnes(vector<int> &nums) {
         for (auto &number: nums) {
             if (!number) {
-                consecutive_ones = 0;
+                number_of_consecutive_ones = 0;
             }
             else {
-                ++consecutive_ones;
-                answer = max(answer, consecutive_ones);
+                ++number_of_consecutive_ones;
+                answer = max(answer, number_of_consecutive_ones);
             }
         }
 
