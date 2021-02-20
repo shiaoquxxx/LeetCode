@@ -2,6 +2,7 @@
 
 ## 2021 年 2 月
 
+- 2021-02-20 [697. 数组的度]() <span style="color:green">EASY</span>
 - 2021-02-19 [1004. 最大连续1的个数 III](https://leetcode-cn.com/problems/max-consecutive-ones-iii/) <span style="color:orange">MEDIUM</span>
 - 2021-02-18 [995. K 连续位的最小翻转次数](https://leetcode-cn.com/problems/minimum-number-of-k-consecutive-bit-flips/) <span style="color:red">HARD</span>
 - 2021-02-17 [566. 重塑矩阵](https://leetcode-cn.com/problems/reshape-the-matrix/) <span style="color:green">EASY</span>
