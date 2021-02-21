@@ -2,6 +2,7 @@
 
 ## 2021 年 2 月
 
+- 2021-02-21 [1438. 绝对差不超过限制的最长连续子数组](https://leetcode-cn.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/) <span style="color:orange">MEDIUM</span>
 - 2021-02-20 [697. 数组的度]() <span style="color:green">EASY</span>
 - 2021-02-19 [1004. 最大连续1的个数 III](https://leetcode-cn.com/problems/max-consecutive-ones-iii/) <span style="color:orange">MEDIUM</span>
 - 2021-02-18 [995. K 连续位的最小翻转次数](https://leetcode-cn.com/problems/minimum-number-of-k-consecutive-bit-flips/) <span style="color:red">HARD</span>
