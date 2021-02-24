@@ -2,6 +2,7 @@
 
 ## 2021 年 2 月
 
+- 2021-02-24 [832. 翻转图像](https://leetcode-cn.com/problems/flipping-an-image/) <span style="color:green">EASY</span>
 - 2021-02-23 [1052. 爱生气的书店老板](https://leetcode-cn.com/problems/grumpy-bookstore-owner/) <span style="color:orange">MEDIUM</span>
 - 2021-02-22 [766. 托普利茨矩阵](https://leetcode-cn.com/problems/toeplitz-matrix/) <span style="color:green">EASY</span>
 - 2021-02-21 [1438. 绝对差不超过限制的最长连续子数组](https://leetcode-cn.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/) <span style="color:orange">MEDIUM</span>
